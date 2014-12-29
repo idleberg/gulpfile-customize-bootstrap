@@ -1,0 +1,32 @@
+{
+  "name": "gulpfile-customize-bootstrap",
+  "description": "Gulpfile to build a cusomized Bootstrap version",
+  "version": "3.3.1-beta2",
+  "author": "Jan T. Sott",
+  "homepage": "http://github.com/idleberg/gulpfile-customize-bootstrap",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url":  "git://github.com/idleberg/gulpfile-customize-bootstrap"
+  },
+  "dependencies": {
+    "bootstrap":           "^3.3.1"
+  },
+  "devDependencies": {
+    "del":                 "^1.0.0",
+    "gulp":                "^3.8.10",
+    "gulp-concat":         "^2.4.2",
+    "gulp-cssmin":         "^0.1.6",
+    "gulp-jshint":         "^1.9.0",
+    "gulp-json-lint":      "^0.0.1",
+    "gulp-less-sourcemap": "^1.3.3",
+    "gulp-prompt":         "^0.1.1",
+    "gulp-uglify":         "^1.0.2",
+    "path":                "^0.4.9",
+    "run-sequence":        "^1.0.2"
+  },
+   "scripts": {
+    "test": "gulp selftest"
+  }
+}
