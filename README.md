@@ -1,5 +1,9 @@
 # gulpfile-customize-bootstrap
 
+[![GitHub release](https://img.shields.io/github/release/idleberg/gulpfile-customize-bootstrap.svg?style=flat-square)](https://github.com/idleberg/gulpfile-customize-bootstrap/releases)
+[![Travis](https://img.shields.io/travis/idleberg/gulpfile-customize-bootstrap.svg?style=flat-square)](https://travis-ci.org/idleberg/gulpfile-customize-bootstrap)
+[![David](https://img.shields.io/david/idleberg/gulpfile-customize-bootstrap.svg?style=flat-square)](https://david-dm.org/idleberg/gulpfile-customize-bootstrap)
+
 A Gulp task that lets you choose which components to include into a custom Bootstrap build
 
 ## Usage
@@ -13,7 +17,7 @@ npm install
 
 # Run build task
 gulp build
-```
+``
 
 ## License
 
