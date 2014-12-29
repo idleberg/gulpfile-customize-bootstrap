@@ -1,7 +1,7 @@
 {
   "name": "gulpfile-customize-bootstrap",
   "description": "Gulpfile to build a cusomized Bootstrap version",
-  "version": "3.3.1-beta2",
+  "version": "0.0.1",
   "author": "Jan T. Sott",
   "homepage": "http://github.com/idleberg/gulpfile-customize-bootstrap",
   "license": "MIT",
