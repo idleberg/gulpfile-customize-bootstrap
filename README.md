@@ -17,7 +17,7 @@ npm install
 
 # Run build task
 gulp build
-``
+```
 
 ## License
 
