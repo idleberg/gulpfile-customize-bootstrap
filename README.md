@@ -4,9 +4,16 @@ A Gulp task that lets you choose which components to include into a custom Boots
 
 ## Usage
 
-1. Clone the repository `git clone https://github.com/idleberg/gulpfile-customize-bootstrap.git`
-2. Install Node packages `npm install`
-3. Run build task `gulp build`
+```bash
+# Clone the repository
+git clone https://github.com/idleberg/gulpfile-customize-bootstrap.git`
+
+#Install Node dependencies
+npm install
+
+# Run build task
+gulp build
+```
 
 ## License
 
