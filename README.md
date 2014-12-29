@@ -10,7 +10,7 @@ A Gulp task that lets you choose which components to include into a custom Boots
 
 ```bash
 # Clone the repository
-git clone https://github.com/idleberg/gulpfile-customize-bootstrap.git`
+git clone https://github.com/idleberg/gulpfile-customize-bootstrap.git
 
 #Install Node dependencies
 npm install
