@@ -1,4 +1,5 @@
-var concat   = require('gulp-concat'),
+var cache    = require('gulp-cached'),
+    concat   = require('gulp-concat'),
     cssmin   = require('gulp-cssmin'),
     del      = require('del'),
     gulp     = require('gulp'),
@@ -11,16 +12,24 @@ var concat   = require('gulp-concat'),
 
 
 gulp.task('default', ['build']);
+gulp.task('selftest', ['lint_gulp' , 'lint_pkg']);
 
 
-// Test package.json & gulpfile.js
-gulp.task('selftest', function(){
+// Lint package.json 
+gulp.task('lint_pkg', function(){
 
   gulp.src('package.json')
+      .pipe(cache('linting_pkg'))
       .pipe(jsonlint())
       .pipe(jsonlint.report('verbose'));
+});
+
+
+// Lint gulpfile.js
+gulp.task('lint_gulp', function(){
 
   gulp.src('gulpfile.js')
+      .pipe(cache('linting_pkg'))
       .pipe(jshint())
       .pipe(jshint.reporter());
 });
