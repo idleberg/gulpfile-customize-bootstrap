@@ -6,6 +6,7 @@ var cache    = require('gulp-cached'),
     jshint   = require('gulp-jshint'),
     jsonlint = require('gulp-json-lint'),
     less     = require('gulp-less-sourcemap'),
+    path     = require('path'),
     prompt   = require('gulp-prompt'),
     uglify   = require('gulp-uglify');
 
