@@ -86,7 +86,7 @@ gulp.task('build', ['clean'], function(){
   _js    = [], 
   _less  = [
     _dir+'less/variables.less',
-    _dir+'less/mixins.less',
+    _dir+'less/mixins/*.less',
     _dir+'less/normalize.less',
   ];
 
