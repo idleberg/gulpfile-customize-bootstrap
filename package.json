@@ -8,26 +8,27 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url":  "git://github.com/idleberg/gulpfile-customize-bootstrap"
+    "url": "git://github.com/idleberg/gulpfile-customize-bootstrap"
   },
   "dependencies": {
-    "bootstrap":           "^3.3.5"
+    "bootstrap": "^3.3.5"
   },
   "devDependencies": {
-    "del":                 "^1.2.0",
-    "gulp":                "^3.9.0",
-    "gulp-autoprefixer":   "^3.0.1",
-    "gulp-cached":         "^1.1.0",
-    "gulp-concat":         "^2.6.0",
-    "gulp-cssmin":         "^0.1.7",
-    "gulp-jshint":         "^1.11.2",
-    "gulp-json-lint":      "^0.1.0",
-    "gulp-less-sourcemap": "^1.4.2",
-    "gulp-prompt":         "^0.1.2",
-    "gulp-uglify":         "^1.2.0",
-    "run-sequence":        "^1.1.1"
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-cached": "^1.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-jshint": "^1.11.2",
+    "gulp-json-lint": "^0.1.0",
+    "gulp-prompt": "^0.1.2",
+    "gulp-uglify": "^1.2.0",
+    "less-plugin-autoprefix": "^1.5.1",
+    "less-plugin-clean-css": "^1.5.1",
+    "run-sequence": "^1.1.1",
+    "yargs": "^3.25.0"
   },
-   "scripts": {
+  "scripts": {
     "test": "gulp selftest"
   }
 }

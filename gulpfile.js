@@ -9,18 +9,12 @@ var prefix   = require('gulp-autoprefixer'),
     less     = require('gulp-less-sourcemap'),
     path     = require('path'),
     prompt   = require('gulp-prompt'),
-    uglify   = require('gulp-uglify');
+    uglify   = require('gulp-uglify'),
+    argv     = require('yargs').argv;
 
-var browsers = [
-      "Android 2.3",
-      "Android >= 4",
-      "Chrome >= 20",
-      "Firefox >= 24",
-      "Explorer >= 8",
-      "iOS >= 6",
-      "Opera >= 12",
-      "Safari >= 6"
-];
+// LESS plugins
+var LessPluginAutoPrefix = require('less-plugin-autoprefix'),
+    autoprefix = new LessPluginAutoPrefix({ browsers: ["last 2 versions"] });
 
 
 gulp.task('default', ['build']);
@@ -55,43 +49,50 @@ gulp.task('clean', function () {
 
 // Customize Bootstrap assets
 gulp.task('build', ['clean'], function(){
+
+  if (argv.select) {
+    default_state = true;
+  } else {
+    default_state = false;
+  }
+
   var _components = [
-   'Print media styles',
-   'Typography',
-   'Code',
-   'Grid system',
-   'Tables',
-   'Forms',
-   'Buttons',
-   'Responsive utilities\n',
-
-   'Glyphicons',
-   'Button groups',
-   'Input groups',
-   'Navs',
-   'Navbar',
-   'Breadcrumbs',
-   'Pagination',
-   'Pager',
-   'Labels',
-   'Badges',
-   'Jumbotron',
-   'Thumbnails',
-   'Alerts',
-   'Progress bars',
-   'Media items',
-   'List groups',
-   'Panels',
-   'Responsive embed',
-   'Wells',
-   'Close icon\n',
-
-   'Component animations (for JS)',
-   'Dropdowns',
-   'Tooltips',
-   'Popovers',
-   'Modals',
-   'Carousel\n',
+   { name: 'Print media styles', checked: default_state },
+   { name: 'Typography', checked: default_state },
+   { name: 'Code', checked: default_state },
+   { name: 'Grid system', checked: default_state },
+   { name: 'Tables', checked: default_state },
+   { name: 'Forms', checked: default_state },
+   { name: 'Buttons', checked: default_state },
+   { name: 'Responsive utilities\n', checked: default_state },
+ 
+   { name: 'Glyphicons', checked: default_state },
+   { name: 'Button groups', checked: default_state },
+   { name: 'Input groups', checked: default_state },
+   { name: 'Navs', checked: default_state },
+   { name: 'Navbar', checked: default_state },
+   { name: 'Breadcrumbs', checked: default_state },
+   { name: 'Pagination', checked: default_state },
+   { name: 'Pager', checked: default_state },
+   { name: 'Labels', checked: default_state },
+   { name: 'Badges', checked: default_state },
+   { name: 'Jumbotron', checked: default_state },
+   { name: 'Thumbnails', checked: default_state },
+   { name: 'Alerts', checked: default_state },
+   { name: 'Progress bars', checked: default_state },
+   { name: 'Media items', checked: default_state },
+   { name: 'List groups', checked: default_state },
+   { name: 'Panels', checked: default_state },
+   { name: 'Responsive embed', checked: default_state },
+   { name: 'Wells', checked: default_state },
+   { name: 'Close icon\n', checked: default_state },
+ 
+   { name: 'Component animations (for JS)', checked: default_state },
+   { name: 'Dropdowns', checked: default_state },
+   { name: 'Tooltips', checked: default_state },
+   { name: 'Popovers', checked: default_state },
+   { name: 'Modals', checked: default_state },
+   { name: 'Carousel\n', checked: default_state },
   ],
   _dir   = 'node_modules/bootstrap/',
   _fonts = [],
@@ -280,10 +281,9 @@ gulp.task('build', ['clean'], function(){
           gulp.src(_less)
               .pipe(concat('bootstrap.less'))
               .pipe(less({
-                    generateSourceMap: false, // default true
+                    plugins: autoprefix,
                     paths: [ path.join(__dirname, 'less', 'includes') ]
                   }))
-              .pipe(prefix({browsers: browsers}))
               .pipe(concat('bootstrap.css'))
               .pipe(gulp.dest('dist/css/'))
               .pipe(concat('bootstrap.min.css'))
