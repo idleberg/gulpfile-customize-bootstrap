@@ -1,4 +1,5 @@
-var cache    = require('gulp-cached'),
+var prefix   = require('gulp-autoprefixer'),
+    cache    = require('gulp-cached'),
     concat   = require('gulp-concat'),
     cssmin   = require('gulp-cssmin'),
     del      = require('del'),
@@ -9,6 +10,17 @@ var cache    = require('gulp-cached'),
     path     = require('path'),
     prompt   = require('gulp-prompt'),
     uglify   = require('gulp-uglify');
+
+var browsers = [
+      "Android 2.3",
+      "Android >= 4",
+      "Chrome >= 20",
+      "Firefox >= 24",
+      "Explorer >= 8",
+      "iOS >= 6",
+      "Opera >= 12",
+      "Safari >= 6"
+];
 
 
 gulp.task('default', ['build']);
@@ -271,6 +283,7 @@ gulp.task('build', ['clean'], function(){
                     generateSourceMap: false, // default true
                     paths: [ path.join(__dirname, 'less', 'includes') ]
                   }))
+              .pipe(prefix({browsers: browsers}))
               .pipe(concat('bootstrap.css'))
               .pipe(gulp.dest('dist/css/'))
               .pipe(concat('bootstrap.min.css'))
