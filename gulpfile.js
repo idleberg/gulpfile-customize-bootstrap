@@ -1,5 +1,3 @@
-var prefix   = require('gulp-autoprefixer'),
-    cache    = require('gulp-cached'),
     concat   = require('gulp-concat'),
     cssmin   = require('gulp-cssmin'),
     del      = require('del'),
