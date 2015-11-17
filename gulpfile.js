@@ -281,7 +281,7 @@ gulp.task('build', ['clean'], function(){
           gulp.src(_less)
               .pipe(concat('bootstrap.less'))
               .pipe(less({
-                    plugins: autoprefix,
+                    plugins: [autoprefix],
                     paths: [ path.join(__dirname, 'less', 'includes') ]
                   }))
               .pipe(concat('bootstrap.css'))
